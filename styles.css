@@ -1,7 +1,13 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
 }
+
+*:focus {
+    outline: 3px solid var(--clr-primary);
+    outline-offset: 3px;
+}
+
 
 :root {
     --ff-primary: "Poppins", sans-serif;
@@ -18,7 +24,7 @@
     --clr-primary: #c70039;
     --clr-dark: #19000e;
 
-    --padding-section: 2em;
+    --padding-section: 1em 2em;
 }
 
 body {
@@ -38,7 +44,8 @@ section {
     color: var(--clr-primary);
 
     margin: 1em 0;
-    letter-spacing: 1px;;
+    letter-spacing: 1px;
+    
 }
 
 .heading > span {
@@ -273,4 +280,50 @@ section {
 
 .portfolio-close-btn:hover {
     color: var(--clr-light);
+}
+
+
+/* contact form */
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form {
+    margin: 1em 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+input {
+    font-family: var(--ff-primary);
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+}
+
+input[type=submit] {
+    margin: 1em 0;
+    font-weight: var(--fw-normal);
+    background: var(--clr-primary);
+    color: var(--clr-light);
+
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background: var(--clr-light);
+    color: var(--clr-primary);
+}
+
+textarea {
+    resize: vertical;
+    font-family: inherit;
+    padding: 1em;
+    border: none;
+    border-radius: 0.3em;
 }
