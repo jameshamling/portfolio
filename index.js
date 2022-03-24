@@ -80,10 +80,32 @@ function renderPortfolioItem(index) {
 }
 
 
-const contactForm = document.getElementById("contact-form")
-contactForm.action += "@gmail.com"
+// const contactForm = document.getElementById("contact-form")
+// contactForm.action += "@gmail.com"
 
 // add a contact form at the end of the page that can directly send emails to my inbox
 
 // move the photo down on the homescreen so it is right on top of the text, then add a
 // burger menu that can jump to different points on the page
+
+const menuIcon = document.getElementById("menu-icon--container")
+const menu = document.getElementById("open-menu")
+
+menuIcon.addEventListener("click", () => {
+    menu.style.display = "block"
+    menu.style.left = "0"
+
+    document.getElementById("menu-close-btn").addEventListener("click", () => {
+        menu.style.display = "none"
+        menu.style.left = "100%"
+    })
+})
+
+const menuItems = Array.from(document.getElementsByClassName("menu-item"))
+
+menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+        menu.style.display = "none"
+        menu.style.left = "100%"
+    })
+})

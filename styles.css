@@ -8,6 +8,9 @@
     outline-offset: 3px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
     --ff-primary: "Poppins", sans-serif;
@@ -70,8 +73,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 60%;
+    justify-content: center;
+    margin-top: auto;
 }
 
 .title {
@@ -80,6 +83,7 @@ section {
     color: var(--clr-primary);
     font-size: var(--fs-heading);
     max-width: 7em;
+    margin-top: 1em;
 }
 
 .title > span {
@@ -117,6 +121,85 @@ section {
 
 .home-section > .arrow-container {
     margin-top: auto;
+}
+
+.menu-icon--container {
+    align-self: flex-end;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}
+
+.menu-icon--container:hover {
+    color: var(--clr-primary);
+}
+
+.menu-icon {
+    margin: -0.2em;
+    transform: scaleX(2);
+}
+
+/* open menu */
+
+.open-menu {
+    display: none;
+
+    position: fixed;
+    left: 100%;
+    
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    transition: left 500ms ease-in-out;
+
+    background: var(--clr-light);
+    padding: 2em;
+}
+
+.menu-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+a.menu-item {
+    color: var(--clr-primary);
+    text-decoration: none;
+    font-size: var(--fs-heading);
+    letter-spacing: 2px;
+    transition: letter-spacing 500ms ease-in-out;
+}
+
+a.menu-item:hover {
+    letter-spacing: 5px;
+}
+
+.menu-heading {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: var(--fw-bold);
+}
+
+.menu-close-btn {
+    color: var(--clr-primary);
+    font-size: 3rem;
+    margin-top: 0.5rem;
+
+    cursor: pointer;
+}
+
+.menu-close-btn:hover {
+    color: var(--clr-dark);
 }
 
 /* about section */
