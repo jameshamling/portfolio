@@ -25,61 +25,52 @@ arrowPageLeft.addEventListener("click", () => {
 
 
 const portfolioSingleContainer = document.getElementById("portfolio-single-item-container")
-const portfolioItems = Array.from(document.getElementsByClassName("portfolio__item-container"))
 const portfolioContainer = document.getElementById("portfolio-container");
-const portfolioImages = Array.from(document.getElementsByClassName("portfolio-img"))
-const portfolioTitles = Array.from(document.getElementsByClassName("portfolio__item__heading"))
-const portfolioElements = []
-
-class PortfolioElement {
-    constructor(title, img, desc) {
-        this.title = title,
-        this.img = img,
-        this.desc = desc
-    }
-}
-
-portfolioImages.forEach(item => {
-    const index = portfolioImages.indexOf(item)
-    portfolioElements.push ( new PortfolioElement(portfolioTitles[index].textContent, item.src, "") )
-})
-
-function addToPortfolio(item) {
-    portfolioElements.push(item)
-}
-
-// call addToPortfolio for each project that needs adding to the page rather than hard coding anything
-// portfolioElements will then need to be looped through in order to render each item to the page
-
-// portfolioSingleContainer and portfolioItems can probably be deleted
-
-// move the portfolio items to be added into their own file which can act as a basic database
-// use fetch to get the data from this file and then create a function to loop thorough the
-// resulting array and create a new PortfolioElement for each one
 
 
-portfolioElements.find(item => item.title === "Movie Watchlist App").desc = 
-    `This is a project I built for a Scrimba challenge. It involved fetching data from an API in order to populate the results when the user searches for a film.`
+let portfolioElements = []
 
+fetch("./portfolioItems.md")
+    .then(res => res.json())
+    .then(data => {
+        portfolioElements = data
+        let allItemsMarkup = ""
+        data.forEach(item => {
+            allItemsMarkup +=
+            `<div class="portfolio__item-container">
+                <h3 class="portfolio__item__heading">${item.title}</h3>
+                <div class="portfolio__item">
+                    <img src="${item.image}" 
+                    alt="${item.altText}"
+                    class="portfolio-img" />
+                </div>
+            </div>` 
 
-// deleting portfolioItems will break this code but this can be replaced by looping through
-// portfolioElements instead
-portfolioItems.forEach(item => {
-    item.addEventListener("click", () => {
-        renderPortfolioItem(portfolioItems.indexOf(item))  
-    } )
-})
+        })
+        portfolioContainer.innerHTML = allItemsMarkup
+    
+        const portfolioImages = Array.from(document.getElementsByClassName("portfolio-img"))
+
+        portfolioImages.forEach(image => {
+            image.addEventListener("click", () => {
+                renderPortfolioItem(portfolioImages.indexOf(image))  
+            } )
+        })
+
+        return portfolioElements
+    })
+
 
 function renderPortfolioItem(index) {
-    const {title, img, desc} = portfolioElements[index]
+    const {title, image, description} = portfolioElements[index]
     portfolioContainer.style.display = "none"
     portfolioSingleContainer.innerHTML = 
     `
     <div class="portfolio-single-container">
         <i class="fas fa-times-circle portfolio-close-btn" id="close-btn"></i>
         <h2 class="heading portfolio-single__title">${title}</h2>
-        <img src="${img}" class="portfolio-single__img"/>
-        <p class="portfolio-desc">${desc}</p>
+        <img src="${image}" class="portfolio-single__img"/>
+        <p class="portfolio-desc">${description}</p>
     `
     const closeBtn = document.getElementById("close-btn")
     closeBtn.addEventListener("click", () => {
@@ -88,8 +79,6 @@ function renderPortfolioItem(index) {
     })
 }
 
-// refactor portfolio so that each item can be added or removed dynamically in the
-// js rather than having 4 items hardcoded in the html
 
 // add a contact form at the end of the page that can directly send emails to my inbox
 
