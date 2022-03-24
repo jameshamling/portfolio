@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Hamling Portfolio</title>
+    <script src="https://kit.fontawesome.com/21b5b58370.js" crossorigin="anonymous"></script>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="all-content-container">
+    <section class="home-section">
+        <div class="home-content-container">
+            <div class="profile-img-container">
+                <img src="./images/profile_photo.JPG" alt="" class="profile-img">
+                <div class="profile-bg"></div>
+            </div>
+            <h1 class="title">Hi, my name is <span>James</span> and I'm a 
+                <span>Frontend Developer.</span></h1>
+        </div>
+        <div class="arrow-container" id="arrow-page-down">
+            <i class="fas fa-chevron-down arrow-icon accent"></i>
+            <i class="fas fa-chevron-down arrow-icon light"></i>
+        </div>
+    </section>
+    <section class="about-section">
+        <h2 class="heading">What I'm <span>great</span> at, and what I'm <span>working</span> 
+            on right now</h2>
+        <p class="about__body">I love building apps using <strong>JavaScript</strong>, and I also have a good amount 
+            of experience working with both <strong>HTML5</strong> and <strong>CSS3</strong> alongside it. I enjoy creating great looking 
+            UI designs too whenever I get the chance.</p>
+        <p class="about__body">Right now I'm completing the 'Frontend Developer Career Path' course on 
+            Scrimba.com, which includes over 70 hours of material covering everything from the basics 
+            of HTML, CSS and JavaScript up to learning advanced <strong>React</strong>, which is what I am currently 
+            working on!</p>
+        <p class="about__body">
+            I've also built a lot of projects from scratch; some were challenges set by Scrimba, and 
+            others were using designs from Frontend Mentor, a website dedicated to providing design 
+            briefs and mockups with the challenge of building them up from start to finish.</p>
+        <div class="arrow-container arrow-container--up arrow-page-up">
+            <i class="fas fa-chevron-down arrow-icon accent"></i>
+            <i class="fas fa-chevron-down arrow-icon light"></i>
+        </div>
+        <div class="arrow-container arrow-container--right" id="arrow-page-right">
+            <i class="fas fa-chevron-down arrow-icon accent"></i>
+            <i class="fas fa-chevron-down arrow-icon light"></i>
+        </div>
+    </section>
+    <section class="portfolio-section">
+        <h2 class="heading">Here are some of the <span>best projects</span> I've built so far...</h2>
+        <div class="portfolio-container" id="portfolio-container">
+
+            <div class="portfolio__item-container">
+                <h3 class="portfolio__item__heading">Movie Watchlist App</h3>
+                <div class="portfolio__item">
+                    <img src="./images/portfolio images/watchlist app screenshot.png" 
+                    alt="watchlist app"
+                    class="portfolio-img" />
+                </div>
+            </div>
+
+            <div class="portfolio__item-container">
+                <h3 class="portfolio__item__heading">Snake Game</h3>
+                <div class="portfolio__item">
+                    <img src="./images/portfolio images/snake game.png" 
+                    alt="snake game"
+                    class="portfolio-img" />
+                </div>
+            </div>
+
+            <div class="portfolio__item-container">
+                <h3 class="portfolio__item__heading">Emoji Picker App</h3>
+                <div class="portfolio__item">
+                    <img src="./images/portfolio images/emoji picker app.png" 
+                    alt="emoji picker app"
+                    class="portfolio-img" />
+                </div>
+            </div>
+
+            <div class="portfolio__item-container">
+                <h3 class="portfolio__item__heading">Unit Converter App</h3>
+                <div class="portfolio__item">
+                    <img src="./images/portfolio images/unit conversion app.png" 
+                    alt="unit converter app"
+                    class="portfolio-img" />
+                </div>
+            </div>
+        </div>
+        <div id="portfolio-single-item-container"></div>
+        <div class="arrow-container arrow-container--up arrow-page-up">
+            <i class="fas fa-chevron-down arrow-icon accent"></i>
+            <i class="fas fa-chevron-down arrow-icon light"></i>
+        </div>
+        <i class="fas fa-chevron-up portfolio-arrow portfolio-arrow-up"></i>
+        <i class="fas fa-chevron-down portfolio-arrow portfolio-arrow-down"></i>
+        <div class="arrow-container arrow-container--left" id="arrow-page-left">
+            <i class="fas fa-chevron-down arrow-icon accent"></i>
+            <i class="fas fa-chevron-down arrow-icon light"></i>
+        </div>
+    </section>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
