@@ -72,7 +72,7 @@ function renderPortfolioItem(index) {
         <img src="${image}" class="portfolio-single__img"/>
         <p class="portfolio-desc">${description}</p>
         <p class="portfolio-link">
-            <a href="${link}">Click here to view the live site! <span>(Opens in new tab)</span></a>
+            <a href="${link}" target="_blank">Click here to view the live site! <span>(Opens in new tab)</span></a>
         </p>
     `
     const closeBtn = document.getElementById("close-btn")

@@ -131,11 +131,10 @@ section {
 
 .menu-icon--container {
     align-self: flex-end;
-    margin-right: 1em;
+    margin: 1em 2em 0 0;
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
-
     cursor: pointer;
 }
 
@@ -146,6 +145,16 @@ section {
 .menu-icon {
     margin: -0.2em;
     transform: scaleX(2);
+}
+
+.menu-icon--container:hover .menu-icon:nth-of-type(1) {
+    transform: scaleX(2.3);
+}
+.menu-icon--container:hover .menu-icon:nth-of-type(2) {
+    transform: scaleX(2.6);
+}
+.menu-icon--container:hover .menu-icon:nth-of-type(3) {
+    transform: scaleX(2.9);
 }
 
 /* open menu */
@@ -159,8 +168,7 @@ section {
     z-index: 10;
     transition: left 500ms ease-in-out;
 
-    background: var(--clr-light);
-    padding: 2em;
+    background: var(--clr-primary);
 }
 
 .animate-menu {
@@ -192,37 +200,43 @@ section {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .menu-items {
     display: flex;
     flex-direction: column;
-    gap: 2em;
 }
 
 a.menu-item {
-    color: var(--clr-primary);
+    color: var(--clr-dark);
     text-decoration: none;
     font-size: var(--fs-heading);
     letter-spacing: 2px;
     transition: letter-spacing 500ms ease-in-out;
+    padding: 1rem;
+    padding-left: 2rem;
 }
 
 a.menu-item:hover {
     letter-spacing: 5px;
+    background: var(--clr-dark);
+    color: var(--clr-light);
 }
 
 .menu-heading {
     font-size: 3rem;
     margin: 0;
+    padding: 1rem 0 0 2rem;
     font-weight: var(--fw-bold);
+    color: var(--clr-dark);
 }
 
 .menu-close-btn {
-    color: var(--clr-primary);
+    color: var(--clr-light);
     font-size: 3rem;
     margin-top: 0.5rem;
+    padding: 1rem 2rem 0 0;
     cursor: pointer;
 }
 
