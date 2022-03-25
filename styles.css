@@ -387,6 +387,21 @@ a.menu-item:hover {
     color: var(--clr-light);
 }
 
+.portfolio-link > a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: var(--fw-normal);
+    letter-spacing: 1px;
+}
+
+.portfolio-link > a > span {
+    font-weight: var(--fw-light);
+}
+
+.portfolio-link > a:hover {
+    color: var(--clr-primary);
+}
+
 
 /* contact form */
 
@@ -403,7 +418,8 @@ a.menu-item:hover {
     gap: 0.5em;
 }
 
-input {
+input,
+.submit-btn {
     font-family: var(--ff-primary);
     letter-spacing: 1px;
     border: none;
@@ -411,7 +427,7 @@ input {
     padding: 0.5em 1em;
 }
 
-input[type=submit] {
+.submit-btn {
     margin: 1em 0;
     font-weight: var(--fw-normal);
     background: var(--clr-primary);
@@ -420,7 +436,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+.submit-btn:hover {
     background: var(--clr-light);
     color: var(--clr-primary);
 }

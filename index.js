@@ -62,7 +62,7 @@ fetch("./portfolioItems.md")
 
 
 function renderPortfolioItem(index) {
-    const {title, image, description} = portfolioElements[index]
+    const {title, image, description, link} = portfolioElements[index]
     portfolioContainer.style.display = "none"
     portfolioSingleContainer.innerHTML = 
     `
@@ -71,6 +71,9 @@ function renderPortfolioItem(index) {
         <h2 class="heading portfolio-single__title">${title}</h2>
         <img src="${image}" class="portfolio-single__img"/>
         <p class="portfolio-desc">${description}</p>
+        <p class="portfolio-link">
+            <a href="${link}">Click here to view the live site! <span>(Opens in new tab)</span></a>
+        </p>
     `
     const closeBtn = document.getElementById("close-btn")
     closeBtn.addEventListener("click", () => {
