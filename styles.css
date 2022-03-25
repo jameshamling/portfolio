@@ -90,6 +90,7 @@ section {
     font-size: var(--fs-heading);
     max-width: 7em;
     margin-top: 1em;
+    max-width: 10ch;
 }
 
 .title > span {
@@ -227,7 +228,7 @@ a.menu-item:hover {
 .menu-heading {
     font-size: 3rem;
     margin: 0;
-    padding: 1rem 0 0 2rem;
+    padding: 0.5rem 0 0 2rem;
     font-weight: var(--fw-bold);
     color: var(--clr-dark);
 }
@@ -235,7 +236,7 @@ a.menu-item:hover {
 .menu-close-btn {
     color: var(--clr-light);
     font-size: 3rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     padding: 1rem 2rem 0 0;
     cursor: pointer;
 }
@@ -265,6 +266,7 @@ a.menu-item:hover {
     height: 5em;
     width: fit-content;
     margin: 0 auto;
+    margin-bottom: 1.5em;
 }
 
 .arrow-container--up {
@@ -315,6 +317,11 @@ a.menu-item:hover {
 /* portfolio page */
 
 .portfolio-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-container {
     display: flex;
     flex-direction: column;
 }
@@ -378,7 +385,7 @@ a.menu-item:hover {
     color: var(--clr-light);
 }
 
-/* portfolio enlarged projecy */
+/* portfolio enlarged project */
 
 .portfolio-single-container {
     display: flex;
@@ -428,6 +435,8 @@ a.menu-item:hover {
 .contact-section {
     display: flex;
     flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 #contact-form {
@@ -447,9 +456,15 @@ input,
     padding: 0.5em 1em;
 }
 
+input {
+    margin-bottom: 0.5em;
+}
+
 .submit-btn {
     margin: 1em 0;
+    font-size: 1.2rem;
     font-weight: var(--fw-normal);
+    letter-spacing: 2px;
     background: var(--clr-primary);
     color: var(--clr-light);
 
@@ -510,3 +525,55 @@ textarea {
 .link--thanks:hover::before {
     transform: scaleX(1);
 }
+
+@media (min-width: 600px) {
+
+    .heading {
+        margin-top: 1rem;
+    }
+
+    /* home screen */
+
+    .home-content-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+    .title { 
+        margin-top: 0;
+    }
+
+    /* about */
+
+    .about-section--content {
+        display: flex;
+        gap: 2em;
+    }
+
+    .about-section--content__body {
+        margin-top: 1em;
+    }
+
+    /* portfolio */
+    .portfolio-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .portfolio__item-container {
+        width: 48%;
+    }
+
+}
+
+/* create media queries for larger screen sizes and 
+get as close to the reference as possible (though 
+some differences are okay if it is simpler and still looks
+good // looks better) */
+
+/* try to integrate the menu into the side of the page on
+larger screen sizes - maybe the burger could still be there to some 
+extent and then open out to a fixed width (not 100%) when clicked */

@@ -35,7 +35,7 @@
                 <img src="./portfolio images/profile_photo.JPG" alt="" class="profile-img">
                 <div class="profile-bg"></div>
             </div>
-            <h1 class="title">Hi, my name is <span>James</span> and I'm a 
+            <h1 class="title">Hi, my name is <span>James</span><br> and I'm a 
                 <span>Frontend Developer.</span></h1>
         </div>
         <div class="arrow-container" id="arrow-page-down">
@@ -44,19 +44,23 @@
         </div>
     </section>
     <section class="about-section" id="about">
-        <h2 class="heading">What I'm <span>great</span> at, and what I'm <span>working</span> 
-            on right now</h2>
-        <p class="about__body">I love building apps using <strong>JavaScript</strong>, and I also have a good amount 
-            of experience working with both <strong>HTML5</strong> and <strong>CSS3</strong> alongside it. I enjoy creating great looking 
-            UI designs too whenever I get the chance.</p>
-        <p class="about__body">Right now I'm completing the 'Frontend Developer Career Path' course on 
-            Scrimba.com, which includes over 70 hours of material covering everything from the basics 
-            of HTML, CSS and JavaScript up to learning advanced <strong>React</strong>, which is what I am currently 
-            working on!</p>
-        <p class="about__body">
-            I've also built a lot of projects from scratch; some were challenges set by Scrimba, and 
-            others were using designs from Frontend Mentor, a website dedicated to providing design 
-            briefs and mockups with the challenge of building them up from start to finish.</p>
+        <div class="about-section--content">
+            <h2 class="heading">What I'm <span>great</span> at, and what I'm <span>working</span> 
+                on right now</h2>
+            <div class="about-section--content__body">
+                <p class="about__body">I love building apps using <strong>JavaScript</strong>, and I also have a good amount 
+                    of experience working with both <strong>HTML5</strong> and <strong>CSS3</strong> alongside it. I enjoy creating great looking 
+                    UI designs too whenever I get the chance.</p>
+                <p class="about__body">Right now I'm completing the 'Frontend Developer Career Path' course on 
+                    Scrimba.com, which includes over 70 hours of material covering everything from the basics 
+                    of HTML, CSS and JavaScript up to learning advanced <strong>React</strong>, which is what I am currently 
+                    working on!</p>
+                <p class="about__body">
+                    I've also built a lot of projects from scratch; some were challenges set by Scrimba, and 
+                    others were using designs from Frontend Mentor, a website dedicated to providing design 
+                    briefs and mockups with the challenge of building them up from start to finish.</p>
+            </div>
+        </div>
         <div class="arrow-container arrow-container--up arrow-page-up">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
@@ -91,6 +95,7 @@
             <textarea name="message" required placeholder="Write a message..." aria-label="write a message here"></textarea>
             <button type="submit" class="submit-btn">Send</button>
             <input type="hidden" name="_next" value="https://jameshamling.github.io/portfolio/emailSent.html">
+            <input type="hidden" name="_captcha" value="false">
        </form>
 
         <div class="arrow-container arrow-container--up arrow-page-up">

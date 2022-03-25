@@ -78,7 +78,7 @@ function renderPortfolioItem(index) {
     const closeBtn = document.getElementById("close-btn")
     closeBtn.addEventListener("click", () => {
         portfolioSingleContainer.innerHTML = ""
-        portfolioContainer.style.display = "block"
+        portfolioContainer.style.display = "flex"
     })
 }
 
