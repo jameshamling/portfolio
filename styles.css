@@ -56,6 +56,12 @@ section {
     font-weight: var(--fw-bold);
 }
 
+.link {
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
 /* home page */
 
 .home-section {
@@ -447,4 +453,46 @@ textarea {
     padding: 1em;
     border: none;
     border-radius: 0.3em;
+}
+
+/* thanks page */
+
+.thanks-container {
+    padding: 2em;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks--heading {
+    margin-top: auto;
+    padding: 1em;
+    border-top: 3px solid var(--clr-primary);
+    border-bottom: 3px solid var(--clr-primary);
+}
+
+.link--thanks {
+    margin: auto;
+    margin-bottom: 2em;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.link--thanks::before {
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+    content: '';
+    width: 100%;
+    height: 0.1em;
+    background: var(--clr-light);
+    position: absolute;
+    bottom: -0.3em;
+}
+
+.link--thanks:hover::before {
+    transform: scaleX(1);
 }

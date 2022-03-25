@@ -82,12 +82,6 @@ function renderPortfolioItem(index) {
     })
 }
 
-
-// const contactForm = document.getElementById("contact-form")
-// contactForm.action += "@gmail.com"
-
-// add a contact form at the end of the page that can directly send emails to my inbox
-
 const menuIcon = document.getElementById("menu-icon--container")
 const menu = document.getElementById("open-menu")
 
