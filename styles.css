@@ -22,12 +22,17 @@ html {
 
     --fs-body: 1rem;
     --fs-heading: 2rem;
+    --fs-title: 2rem;
 
     --clr-light: #fff;
     --clr-primary: #c70039;
+    --clr-primary-accent: #4B0015;
+    --clr-dark-accent: #16010d;
     --clr-dark: #19000e;
 
     --padding-section: 1em 2em;
+
+    --menu-slide-percent: 0;
 }
 
 body {
@@ -87,7 +92,7 @@ section {
     font-family: var(--ff-accent);
     font-weight: var(--fw-light);
     color: var(--clr-primary);
-    font-size: var(--fs-heading);
+    font-size: var(--fs-title);
     max-width: 7em;
     margin-top: 1em;
     max-width: 10ch;
@@ -167,7 +172,6 @@ section {
     width: 100vw;
     height: 100vh;
     z-index: 10;
-    transition: left 500ms ease-in-out;
 
     background: var(--clr-primary);
 }
@@ -181,7 +185,7 @@ section {
 
 @keyframes menuSlide {
     from {left: 100%;}
-    to {left: 0;}
+    to {left: var(--menu-slide-percent);} 
 }
 
 .remove-menu {
@@ -192,10 +196,11 @@ section {
 }
 
 @keyframes reverseMenuSlide {
-    from {left: 0;}
+    from {left: var(--menu-slide-percent);} 
     to {left: 100%;}
 
 }
+
 
 .menu-top {
     display: flex;
@@ -221,7 +226,7 @@ a.menu-item {
 
 a.menu-item:hover {
     letter-spacing: 5px;
-    background: var(--clr-dark);
+    background: var(--clr-primary-accent);
     color: var(--clr-light);
 }
 
@@ -244,6 +249,7 @@ a.menu-item:hover {
 .menu-close-btn:hover {
     color: var(--clr-dark);
 }
+
 
 /* about section */
 
@@ -275,18 +281,6 @@ a.menu-item:hover {
 
 .arrow-page-up {
     order: -1;
-}
-
-.arrow-container--right {
-    transform: rotate(270deg);
-    display: none;
-    visibility: hidden;
-}
-
-.arrow-container--left {
-    transform: rotate(90deg);
-    display: none;
-    visibility: hidden;
 }
 
 .light {
@@ -391,6 +385,13 @@ a.menu-item:hover {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    margin-bottom: 2em;
+}
+
+.portfolio-single-top {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 .portfolio-single__title {
@@ -528,6 +529,10 @@ textarea {
 
 @media (min-width: 600px) {
 
+    :root {
+        --fs-title: 2.5rem;
+    }
+
     .heading {
         margin-top: 1rem;
     }
@@ -542,6 +547,12 @@ textarea {
     }
     .title { 
         margin-top: 0;
+    }
+
+    .profile-img,
+    .profile-bg {
+        width: 14em;
+        height: 14em;
     }
 
     /* about */
@@ -567,13 +578,125 @@ textarea {
         width: 48%;
     }
 
+    /* portfolio single item */
+
+    .portfolio-single__img {
+        height: 30em;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .portfolio-single-container { 
+        gap: 2em;
+    }
+    
 }
 
-/* create media queries for larger screen sizes and 
-get as close to the reference as possible (though 
-some differences are okay if it is simpler and still looks
-good // looks better) */
 
-/* try to integrate the menu into the side of the page on
-larger screen sizes - maybe the burger could still be there to some 
-extent and then open out to a fixed width (not 100%) when clicked */
+@media (min-width: 750px) {
+
+    :root {
+        --menu-slide-percent: 60%;
+    }
+   
+    .open-menu {
+        width: 40vw;
+    }
+
+    #menu-icon--container {
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    #menu-icon--container:hover {
+        color: var(--clr-dark);
+    }
+
+    #all-content-container {
+        max-width: calc(100% - 80px);
+    }
+
+    #all-content-container::after {
+        content: '';
+        width: 80px;
+        height: 100vh;
+        background: var(--clr-primary);
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+
+}
+
+@media (min-width: 1000px) {
+
+    :root {
+        --fs-body: 1.2rem;
+        --fs-heading: 2.4rem;
+        --fs-title: 3rem;
+    
+        --padding-section: 1em 3em;
+    }
+
+    .profile-img,
+    .profile-bg {
+        width: 16em;
+        height: 16em;
+    }
+
+    .section {
+        min-height: 100vh;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-section--content {
+        margin-bottom: auto;
+    }
+
+    .contact-section {
+        max-width: 700px;
+    }
+
+    .contact-section--content {
+        margin-bottom: auto;
+        background: var(--clr-dark-accent);
+        padding: 1em;
+        border-radius: 0.3em;
+        box-shadow: 0 0.5em 1em #0005
+    }
+
+    .arrow-page-up {
+        margin-bottom: auto;
+    }
+
+    .arrow-page-down {
+        margin-top: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --menu-slide-percent: 70%;
+    }
+   
+    .open-menu {
+        width: 30vw;
+    }
+}
+
+/* fix bug where menu opens and closes itself when the screen size passes 750px point */
+
+/* add another media query to work with screens over 900/1000px to stop stuff getting too big */
+
+/* maybe change the direction of some of the arrows - it is confusing to have one arrow pointing
+down and then on the next slide have an arrow pointing up in exactly the same spot */

@@ -13,7 +13,7 @@
 </head>
 <body>
   <div id="all-content-container">
-    <section class="home-section">
+    <section class="section home-section">
         <div class="menu-icon--container" id="menu-icon--container">
             <i class="fas fa-minus menu-icon"></i>
             <i class="fas fa-minus menu-icon"></i>
@@ -38,12 +38,12 @@
             <h1 class="title">Hi, my name is <span>James</span><br> and I'm a 
                 <span>Frontend Developer.</span></h1>
         </div>
-        <div class="arrow-container" id="arrow-page-down">
+        <div class="arrow-container" id="home-page-down">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
         </div>
     </section>
-    <section class="about-section" id="about">
+    <section class="section about-section" id="about">
         <div class="about-section--content">
             <h2 class="heading">What I'm <span>great</span> at, and what I'm <span>working</span> 
                 on right now</h2>
@@ -61,44 +61,46 @@
                     briefs and mockups with the challenge of building them up from start to finish.</p>
             </div>
         </div>
-        <div class="arrow-container arrow-container--up arrow-page-up">
+        <div class="arrow-container arrow-container--up arrow-page-up" id="about-page-up">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
         </div>
-        <div class="arrow-container arrow-container--right" id="arrow-page-right">
+        <div class="arrow-container arrow-container--down" id="about-page-down">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
         </div>
     </section>
-    <section class="portfolio-section" id="portfolio">
+    <section class="section portfolio-section" id="portfolio">
         <h2 class="heading">Here are some of the <span>best projects</span> I've built so far...</h2>
         <div class="portfolio-container" id="portfolio-container"></div>
         <div id="portfolio-single-item-container"></div>
-        <div class="arrow-container arrow-container--up arrow-page-up">
+        <div class="arrow-container arrow-container--up arrow-page-up" id="portfolio-page-up">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
         </div>
         <i class="fas fa-chevron-up portfolio-arrow portfolio-arrow-up"></i>
         <i class="fas fa-chevron-down portfolio-arrow portfolio-arrow-down"></i>
-        <div class="arrow-container arrow-container--left" id="arrow-page-left">
+        <div class="arrow-container" id="portfolio-page-down">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
         </div>
     </section>
-    <section class="contact-section" id="contact">
-        <h2 class="heading">How to <span>get in touch</span></h2>
-        <p>Leave a message below and I will get back to you as 
-            soon as possible - usually within 24 hours.</p>
-        <form action="https://formsubmit.co/06a1df43fdb1e23c56a173c85be1031f" method="POST" target="_blank" id="contact-form">
-            <input type="text" name="name" required placeholder="Name" aria-label="name">
-            <input type="email" name="email" required placeholder="Email" aria-label="email">
-            <textarea name="message" required placeholder="Write a message..." aria-label="write a message here"></textarea>
-            <button type="submit" class="submit-btn">Send</button>
-            <input type="hidden" name="_next" value="https://jameshamling.github.io/portfolio/emailSent.html">
-            <input type="hidden" name="_captcha" value="false">
-       </form>
+    <section class="section contact-section" id="contact">
+        <div class="contact-section--content">
+            <h2 class="heading">How to <span>get in touch</span></h2>
+            <p>Leave a message below and I will get back to you as 
+                soon as possible - usually within 24 hours.</p>
+            <form action="https://formsubmit.co/06a1df43fdb1e23c56a173c85be1031f" method="POST" target="_blank" id="contact-form">
+                <input type="text" name="name" required placeholder="Name" aria-label="name">
+                <input type="email" name="email" required placeholder="Email" aria-label="email">
+                <textarea name="message" required placeholder="Write a message..." aria-label="write a message here"></textarea>
+                <button type="submit" class="submit-btn">Send</button>
+                <input type="hidden" name="_next" value="https://jameshamling.github.io/portfolio/emailSent.html">
+                <input type="hidden" name="_captcha" value="false">
+        </form>
+        </div>
 
-        <div class="arrow-container arrow-container--up arrow-page-up">
+        <div class="arrow-container arrow-container--up arrow-page-up" id="contact-page-up">
             <i class="fas fa-chevron-down arrow-icon accent"></i>
             <i class="fas fa-chevron-down arrow-icon light"></i>
         </div>

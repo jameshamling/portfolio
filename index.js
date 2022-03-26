@@ -1,29 +1,39 @@
-const arrowPageDown = document.getElementById("arrow-page-down");
-const arrowPageUp = Array.from(document.getElementsByClassName("arrow-page-up"));
-const arrowPageRight = document.getElementById("arrow-page-right");
-const arrowPageLeft = document.getElementById("arrow-page-left");
+const homePageDown = document.getElementById("home-page-down");
+const aboutPageDown = document.getElementById("about-page-down");
+const aboutPageUp = document.getElementById("about-page-up");
+const portfolioPageUp = document.getElementById("portfolio-page-up");
+const portfolioPageDown = document.getElementById("portfolio-page-down");
+const contactPageUp = document.getElementById("contact-page-up");
+
+
+
+homePageDown.addEventListener("click", () => {
+    window.scrollTo(0, window.innerHeight)
+})
+
+aboutPageDown.addEventListener("click", () => {
+    window.scrollTo(0, window.innerHeight * 2)
+})
+
+aboutPageUp.addEventListener("click", () => {
+    window.scrollTo(0, 0)
+})
+
+portfolioPageUp.addEventListener("click", () => {
+    window.scrollTo(0, window.innerHeight)
+})
+
+portfolioPageDown.addEventListener("click", () => {
+    window.scrollTo(0, window.innerHeight * 4)
+})
+
+contactPageUp.addEventListener("click", () => {
+    window.scrollTo(0, window.innerHeight * 2)
+})
+
+
+
 const pageContainer = document.getElementById("all-content-container");
-
-arrowPageDown.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight)
-})
-
-arrowPageUp.forEach(arrow => {
-    arrow.addEventListener("click", () => {
-        window.scrollTo(0, 0)
-    })
-})
-
-
-arrowPageRight.addEventListener("click", () => {
-    window.scrollTo(window.innerWidth, window.innerHeight)
-})
-
-arrowPageLeft.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight)
-})
-
-
 const portfolioSingleContainer = document.getElementById("portfolio-single-item-container")
 const portfolioContainer = document.getElementById("portfolio-container");
 
@@ -39,11 +49,13 @@ fetch("./portfolioItems.md")
             allItemsMarkup +=
             `<div class="portfolio__item-container">
                 <h3 class="portfolio__item__heading">${item.title}</h3>
-                <div class="portfolio__item">
-                    <img src="${item.image}" 
-                    alt="${item.altText}"
-                    class="portfolio-img" />
-                </div>
+                <a href="#portfolio">
+                    <div class="portfolio__item">
+                        <img src="${item.image}" 
+                        alt="${item.altText}"
+                        class="portfolio-img" />
+                    </div>
+                </a>
             </div>` 
 
         })
@@ -67,13 +79,16 @@ function renderPortfolioItem(index) {
     portfolioSingleContainer.innerHTML = 
     `
     <div class="portfolio-single-container">
-        <i class="fas fa-times-circle portfolio-close-btn" id="close-btn"></i>
-        <h2 class="heading portfolio-single__title">${title}</h2>
+        <div class="portfolio-single-top">
+            <i class="fas fa-times-circle portfolio-close-btn" id="close-btn"></i>
+            <h2 class="heading portfolio-single__title">${title}</h2>
+        </div>
         <img src="${image}" class="portfolio-single__img"/>
         <p class="portfolio-desc">${description}</p>
         <p class="portfolio-link">
             <a href="${link}" target="_blank">Click here to view the live site! <span>(Opens in new tab)</span></a>
         </p>
+    </div>
     `
     const closeBtn = document.getElementById("close-btn")
     closeBtn.addEventListener("click", () => {
