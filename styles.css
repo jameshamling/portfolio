@@ -263,10 +263,10 @@ a.menu-item:hover {
     line-height: 1.8;
 }
 
-/* arrows */
+/* arrows */ 
 
 .arrow-container {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     justify-content: flex-start;
     height: 5em;

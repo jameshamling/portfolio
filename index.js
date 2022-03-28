@@ -5,32 +5,18 @@ const portfolioPageUp = document.getElementById("portfolio-page-up");
 const portfolioPageDown = document.getElementById("portfolio-page-down");
 const contactPageUp = document.getElementById("contact-page-up");
 
+function setScrollTo(fromHeight, toHeight) {
+    fromHeight.addEventListener("click", () => {
+        window.scrollTo(0, toHeight)
+    })
+}
 
-
-homePageDown.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight)
-})
-
-aboutPageDown.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight * 2)
-})
-
-aboutPageUp.addEventListener("click", () => {
-    window.scrollTo(0, 0)
-})
-
-portfolioPageUp.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight)
-})
-
-portfolioPageDown.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight * 4)
-})
-
-contactPageUp.addEventListener("click", () => {
-    window.scrollTo(0, window.innerHeight * 2)
-})
-
+setScrollTo(homePageDown, window.innerHeight)
+setScrollTo(aboutPageDown, window.innerHeight * 2)
+setScrollTo(portfolioPageDown, window.innerHeight * 4)
+setScrollTo(aboutPageUp, 0)
+setScrollTo(portfolioPageUp, window.innerHeight)
+setScrollTo(contactPageUp, window.innerHeight * 2)
 
 
 const pageContainer = document.getElementById("all-content-container");
@@ -74,7 +60,15 @@ fetch("./portfolioItems.md")
 
 
 function renderPortfolioItem(index) {
-    const {title, image, description, link} = portfolioElements[index]
+    const {title, image, description, link, toolsUsed} = portfolioElements[index]
+    let toolsList = ""
+    toolsUsed.forEach(tool => {
+        toolsList += tool
+
+        if (toolsUsed.indexOf(tool) !== toolsUsed.length - 1) {
+            toolsList += ` • `
+        }
+    })
     portfolioContainer.style.display = "none"
     portfolioSingleContainer.innerHTML = 
     `
@@ -83,6 +77,7 @@ function renderPortfolioItem(index) {
             <i class="fas fa-times-circle portfolio-close-btn" id="close-btn"></i>
             <h2 class="heading portfolio-single__title">${title}</h2>
         </div>
+        <p class="portfolio-tools">${toolsList}</p>
         <img src="${image}" class="portfolio-single__img"/>
         <p class="portfolio-desc">${description}</p>
         <p class="portfolio-link">
