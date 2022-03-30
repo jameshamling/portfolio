@@ -60,7 +60,13 @@ fetch("./portfolioItems.md")
 
 
 function renderPortfolioItem(index) {
-    const {title, image, description, link, toolsUsed} = portfolioElements[index]
+    const {
+        title, 
+        image, 
+        description, 
+        link, 
+        toolsUsed, 
+        github } = portfolioElements[index]
     let toolsList = ""
     toolsUsed.forEach(tool => {
         toolsList += tool
@@ -78,11 +84,19 @@ function renderPortfolioItem(index) {
             <h2 class="heading portfolio-single__title">${title}</h2>
         </div>
         <p class="portfolio-tools">${toolsList}</p>
-        <img src="${image}" class="portfolio-single__img"/>
         <p class="portfolio-desc">${description}</p>
+        <h3 class="heading heading--links">Project Links <span>(Opens in new tab)</span></h3>
+        <p class="github-link">
+            <a href="${github}" target="_blank">Click here to view the Github Repo!</a>
+        </p> 
         <p class="portfolio-link">
-            <a href="${link}" target="_blank">Click here to view the live site! <span>(Opens in new tab)</span></a>
+            <a href="${link}" target="_blank">Click here to view the live site!</a>
         </p>
+        <div class="portfolio-images">
+            <img src="${image}" class="portfolio-images__small"/>
+            <img src="${image}" class="portfolio-images__small"/>
+            <img src="${image}" class="portfolio-images__wide"/> 
+        </div>
     </div>
     `
     const closeBtn = document.getElementById("close-btn")
@@ -91,6 +105,8 @@ function renderPortfolioItem(index) {
         portfolioContainer.style.display = "flex"
     })
 }
+
+// change images so that 3 different ones are used rather than the same one being repeated
 
 const menuIcon = document.getElementById("menu-icon--container")
 const menu = document.getElementById("open-menu")

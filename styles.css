@@ -401,8 +401,11 @@ a.menu-item:hover {
     margin: 0;
 }
 
-.portfolio-single__img {
+.portfolio-images__small,
+.portfolio-images__wide {
     max-width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .portfolio-close-btn {
@@ -416,19 +419,62 @@ a.menu-item:hover {
     color: var(--clr-light);
 }
 
-.portfolio-link > a {
-    text-decoration: none;
+.heading--links {
+    color: var(--clr-light);
+    font-size: 1.8rem; 
+    font-weight: var(--fw-bold);
+    margin: 0.5em 0;
+}
+
+.heading--links > span {
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+    font-weight: var(--fw-light);
+    color: var(--clr-primary);
+}
+
+.portfolio-link > a,
+.github-link > a {
     color: inherit;
     font-weight: var(--fw-normal);
     letter-spacing: 1px;
 }
 
-.portfolio-link > a > span {
-    font-weight: var(--fw-light);
+.portfolio-link > a:hover,
+.github-link > a:hover {
+    color: var(--clr-primary);
 }
 
-.portfolio-link > a:hover {
-    color: var(--clr-primary);
+.portfolio-link {
+    margin-bottom: 2em;
+}
+
+@media (min-width: 400px) {
+
+    .portfolio-images {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+        width: 100%;
+        gap: 0.5em;
+    }
+
+    .portfolio-images__small:nth-of-type(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .portfolio-images__small:nth-of-type(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .portfolio-images__wide {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+
 }
 
 

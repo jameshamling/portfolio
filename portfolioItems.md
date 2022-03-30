@@ -5,7 +5,8 @@
         "altText": "Movie watchlist app",
         "description": "This is a project I built for a Scrimba challenge. It involved fetching data from an API in order to populate the results when the user searches for a film.",
         "link": "",
-        "toolsUsed": ["JavaScript", "APIs", "HTML", "CSS"]
+        "toolsUsed": ["JavaScript", "APIs", "HTML", "CSS"],
+        "github": ""
     },
 
     {
@@ -14,7 +15,8 @@
         "altText": "snake game",
         "description": "This is a game of snake I made as part of a scrimba challenge.",
         "link": "",
-        "toolsUsed": ["JavaScript", "HTML", "CSS"]
+        "toolsUsed": ["JavaScript", "HTML", "CSS"],
+        "github": ""
     },
 
     {
@@ -23,7 +25,8 @@
         "altText": "emoji picker app",
         "description": "An app that lets you add and remove emojis to suit your personality!",
         "link": "https://jameshamling.github.io/my-emoji-app/",
-        "toolsUsed": ["JavaScript", "HTML", "CSS"]
+        "toolsUsed": ["JavaScript", "HTML", "CSS"],
+        "github": ""
     },
 
     {
@@ -32,7 +35,8 @@
         "altText": "unit converter app",
         "description": "This app allows the user to type in a number and have it converted into all sorts of useful units.",
         "link": "",
-        "toolsUsed": ["JavaScript", "HTML", "CSS"]
+        "toolsUsed": ["JavaScript", "HTML", "CSS"],
+        "github": ""
     },
 
     {
@@ -41,6 +45,7 @@
         "altText": "huddle landing page",
         "description": "A landing page created for a Frontend Mentor challenge. The focus was on responsive design and getting the final page to look as close to the reference as possible.",
         "link": "",
-        "toolsUsed": ["HTML", "CSS"]
+        "toolsUsed": ["HTML", "CSS"],
+        "github": ""
     }
 ]
