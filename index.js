@@ -68,16 +68,12 @@ function renderPortfolioItem(index) {
         link, 
         toolsUsed, 
         github } = portfolioElements[index]
-    let toolsList = ""
-    toolsUsed.forEach(tool => {
-        toolsList += tool
-
-        if (toolsUsed.indexOf(tool) !== toolsUsed.length - 1) {
-            toolsList += ` • `
-        }
-    })
-    let fullDesc = ""
-    description.forEach(p => fullDesc += `<p>${p}</p>`)
+    const toolsList = toolsUsed.map(tool => (
+        toolsUsed.indexOf(tool) !== toolsUsed.length - 1 ?
+            tool + ` • ` :
+            tool
+    )).join("")
+    const fullDesc = description.map(p => `<p>${p}</p>`).join("")
 
     portfolioContainer.style.display = "none"
     portfolioSingleContainer.innerHTML = 
