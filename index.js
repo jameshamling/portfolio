@@ -37,7 +37,7 @@ fetch("./portfolioItems.md")
                 <h3 class="portfolio__item__heading">${item.title}</h3>
                 <a href="#portfolio">
                     <div class="portfolio__item">
-                        <img src="${item.image}" 
+                        <img src="${item.wideImage}" 
                         alt="${item.altText}"
                         class="portfolio-img" />
                     </div>
@@ -62,7 +62,8 @@ fetch("./portfolioItems.md")
 function renderPortfolioItem(index) {
     const {
         title, 
-        image, 
+        smallImages,
+        wideImage,
         description, 
         link, 
         toolsUsed, 
@@ -75,6 +76,9 @@ function renderPortfolioItem(index) {
             toolsList += ` • `
         }
     })
+    let fullDesc = ""
+    description.forEach(p => fullDesc += `<p>${p}</p>`)
+
     portfolioContainer.style.display = "none"
     portfolioSingleContainer.innerHTML = 
     `
@@ -84,7 +88,9 @@ function renderPortfolioItem(index) {
             <h2 class="heading portfolio-single__title">${title}</h2>
         </div>
         <p class="portfolio-tools">${toolsList}</p>
-        <p class="portfolio-desc">${description}</p>
+        <div class="portfolio-desc">
+           ${fullDesc}
+        </div>
         <h3 class="heading heading--links">Project Links <span>(Opens in new tab)</span></h3>
         <p class="github-link">
             <a href="${github}" target="_blank">Click here to view the Github Repo!</a>
@@ -93,9 +99,9 @@ function renderPortfolioItem(index) {
             <a href="${link}" target="_blank">Click here to view the live site!</a>
         </p>
         <div class="portfolio-images">
-            <img src="${image}" class="portfolio-images__small"/>
-            <img src="${image}" class="portfolio-images__small"/>
-            <img src="${image}" class="portfolio-images__wide"/> 
+            <img src="${smallImages[0]}" class="portfolio-images__small"/>
+            <img src="${smallImages[1]}" class="portfolio-images__small"/>
+            <img src="${wideImage}" class="portfolio-images__wide"/> 
         </div>
     </div>
     `
