@@ -635,6 +635,19 @@ textarea {
         width: 48%;
     }
 
+    .portfolio__text {
+        margin-bottom: 2em;
+    }
+
+    .portfolio__text > a {
+        color: inherit;
+        font-weight: 700;
+    }
+
+    .portfolio__text > a:hover {
+        color: var(--clr-primary);
+    }
+
     /* portfolio single item */
 
     .portfolio-single__img {

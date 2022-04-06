@@ -108,8 +108,6 @@ function renderPortfolioItem(index) {
     })
 }
 
-// change images so that 3 different ones are used rather than the same one being repeated
-
 const menuIcon = document.getElementById("menu-icon--container")
 const menu = document.getElementById("open-menu")
 
